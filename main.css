@@ -1,0 +1,37 @@
+html {padding: 10px 10px 200px; font-family: droid sans, sans-serif; }
+body {margin: 0 auto; max-width: 580px; }
+body > article:first-child > *:first-child {margin-top: 0; }
+article p {line-height: 1.4em; font-size: 17px; }
+article p img {margin: 0.5em 0 0.5em 0.5em; float: right; }
+a, a:visited {color: #66f; }
+
+/* Shim for IE8 */
+article {display: block; }
+section {display: block; }
+
+h1 {margin: 4em 0 0 0; text-transform: uppercase; font-size: 32px; clear: both; }
+body > article:first-child > h1:first-child {font-size: 36px; width: 80%; }
+h2 {margin: 4em 0 0 0; padding-bottom: 6px; font-size: 26px; border-bottom: 4px solid #aaa; }
+h1+div h2 {margin: 1em 0 0; border-bottom: 0 none; }
+h3 {font-size: 24px; }
+h4 {font-size: 20px; }
+h5 {font-size: 18px; margin-bottom: 0; }
+pre {padding: 1em; background: #eee; overflow: auto; }
+h1+p {margin-top: 0 }
+body > article > p {margin: 0; }
+dt {font-weight: bold; }
+dt, dd {margin-bottom: 0.4em; }
+blockquote {font-style: italic; }
+
+table {border-collapse: collapse; margin-bottom: 2em; }
+table caption {font-size: 20px; margin: 0.5em 0; }
+table tbody tr:nth-child(2n) {background-color: #f8f8f8; }
+td {padding: 6px 13px; text-align: center; }
+table thead td {font-weight: bold; }
+table tbody td {border: 1px solid #ddd; }
+
+@media print {
+    article > article > h1 {page-break-before: always; }
+    h2 {margin: 1em 0 0; }
+    pre {border: 1pt solid #ddd; }
+}

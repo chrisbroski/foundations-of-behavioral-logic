@@ -1,0 +1,466 @@
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.2, user-scalable=no">
+<title>Foundations of Behavioral Logic</title>
+<link rel="stylesheet" href="main.css">
+
+<body>
+<article>
+<h1>Foundations of Behavioral Logic</h1>
+
+<h1>Contents</h1>
+<div data-src="toc.md" class="mdImport"><section id="toc.md">
+<h2><a href="#coreconcepts">Core Concepts</a></h2>
+
+<p>Definitions of basic terms including behavior, intelligence, and learning.</p>
+
+<h2><a href="#programmed">Intelligent Machines</a></h2>
+
+<p>Learning Method I: Externally Programmed</p>
+
+<h2><a href="#habit">Habits of the Beasts</a></h2>
+
+<p>Learning Method II: Trained</p>
+
+<h2><a href="#simulational">The Thinkers</a></h2>
+
+<p>Learning Method III: Simulational</p></section></div>
+</article>
+
+<article id="coreconcepts">
+<h1>Core Concepts</h1>
+<div data-src="forward.md" class="mdImport"><section id="forward.md">
+<h2>Purpose</h2>
+
+<p>When I began studying artificial intelligence, I tried to learn what the experts were doing. I researched neural nets and read papers about the nature of consciousness. I participated in programming contests for game AI and recommendation engines. But after years of work my creations never seemed <em>intelligent</em>. I wanted to build something conscious; something smart in the same way that people are smart. But in that area, nobody seemed to be having any more success than myself.</p>
+
+<p>I realized I was trying to create artificial intelligence without a solid grasp on what <em>intelligence</em> actually was. I am no outsider to this field. I have degrees in Biology and Education, so it was embarrassing to admit that I couldn't define intelligence as well as I assumed I could. I needed to take a step back and not restart until I had a concise, logical, and evidence-based definition of intelligence.</p>
+
+<p>I couldn't find a well accepted definition of intelligence. Work is being conducted under <a href="http://arxiv.org/pdf/0706.3639.pdf">many different and incompatible definitions</a>. Intelligence researchers are stubbornly attempting to move forward without an answer to the central question of "What is intelligence?"</p>
+
+<p>I paused my attempts to create AI until I documented clear, precise, and accurate definitions of all key intelligence concepts and their emergent properties. I believe my work bore fruit that I am happy to share. The final result is mostly a <a href="http://behaviorallogic.com/glossary">glossary of intelligence terms</a>.</p>
+
+<p>Why do I believe that my definitions are better than others? Because I adhered to these principles:</p>
+
+<ol>
+<li><strong>No Jargon</strong> - Instead of inventing new words, common words are used for each concept according to the appropriateness of their standard definition. <a href="http://machaut.uchicago.edu/websters">Webster's Unabridged Dictionary 1913 and 1828 editions</a> were used as primary references.</li>
+<li><strong>No Ambiguity</strong> - Each definition only contains words that have commonly agreed upon definitions, or a definition of ambiguous or controversial words is provided.</li>
+<li><strong>No False Negatives</strong> - No example that would reasonably be considered to belong to a definition, but does not match the definition, should exist.</li>
+<li><strong>No False Positives</strong> - No example that would reasonably <strong>not</strong> be considered to belong to a definition, but matches the definition, should exist.</li>
+<li><strong>Observable Only</strong> - It must be possible to test a definition through the creation of a logical implementation.</li>
+<li><strong>Parsimony</strong> - If part of a definition could be removed without decreasing accuracy or increasing ambiguity, then it should be removed.</li>
+</ol>
+
+<p>First, I will define simple terms such as <em>behavior</em>, <em>action</em>, <em>goal</em>, and <em>benefit</em> but please do not take these for granted. They are the foundation of more advanced terms. By the end, when I define <em>consciousness</em>, <em>understanding</em>, <em>ideas</em>, and other complex terms, if I have done my job well, they should seem as underwhelming and unimpressive as every other definition.</p></section></div>
+<!--<div data-src="introduction.md" class="mdImport"></div>-->
+<div data-src="behavior.md" class="mdImport"><section id="behavior.md">
+<h2>Behavior</h2>
+
+<p><strong>Behavior</strong> is a quality of a thing where a set of conditions initiates an action. It describes the cause and effect relation for a particular medium. Maybe a simple diagram is clearer.</p>
+<pre id="behaviorDiagram">Behavior: Conditions → Thing → Actions
+</pre>
+
+<p>A behavior may be intelligent or it may not be. If you push a rock, the effect might be for it to roll down a hill. This is a behavior of the rock, though it is <strong>nonintelligent</strong>. The rock has no other options to react to the pushing, nor does it have the ability to choose one. </p>
+
+<p>Push a badger, and you can’t be certain what sort of reaction might occur. It is <strong>intelligent</strong> and so has the power to choose.</p>
+
+<p>Let’s not call things with intelligent behavior <em>things</em> anymore. The ability to make choices earns them special recognition. Let's use the term <strong>creature</strong> to refer to a thing that is intelligent. This word is commonly used as a synonym for <em>animal</em>, but its origin is the Late Latin word <em>creatura</em>, which means "something created" so it is appropriate for artificially constructed intelligent things too.</p>
+
+<p>For a creature to display intelligent behavior, it must have a mechanism to select actions based on information from its environment. Let’s call that mechanism <em>Behavioral Logic</em>.</p>
+<pre id="blDiagram">Conditions -→ Creature -→ Action
+                |   ^
+                V   |
+           Behavioral Logic
+</pre>
+
+<p>A <strong>brain</strong>, or working implementation of behavioral logic, can be built from any appropriate material: nerve cells, metal wires and switches, even mechanical gears and levers.</p></section></div>
+<div data-src="behaviortable.md" class="mdImport"><section id="behaviortable.md">
+<h2>Behavior Tables</h2>
+
+<p>The simplest brain would be a <strong>behavior table</strong>; a simple list of behaviors.</p>
+
+<p>Let’s imagine a creature with two types of sensors that can transmit either a 1 or 0. The creature also has three possible actions we will call <em>A</em>, <em>B</em> and <em>C</em>. Its behavior table might look like this:</p>
+<table>
+<thead><tr><td>Situation</td><td>Action
+</td></tr></thead><tbody>
+<tr><td>00</td><td>-
+</td></tr><tr><td>01</td><td>A
+</td></tr><tr><td>10</td><td>B
+</td></tr><tr><td>11</td><td>C
+</td></tr></tbody></table>
+
+<p>Each row of this table represents one behavior. The columns are:</p>
+
+<p><strong>Situation</strong> - A group of coinciding sensory information.</p>
+
+<p><strong>Action</strong> - A physical, chemical, or electrical change.</p>
+
+<p>The changes caused by actions don’t have to be external. They could instead affect other behaviors. Alternate behavior tables could be chosen if the creature is hungry, sleepy, afraid, or in any other variation of its environment. Let’s say action <em>C</em> causes the creature to use table 2, and action <em>D</em> changes it back to the first table.</p>
+<table>
+<caption>Table 2</caption>
+<thead><tr><td>Situation</td><td>Action
+</td></tr></thead><tbody>
+<tr><td>00</td><td>D
+</td></tr><tr><td>01</td><td>B
+</td></tr><tr><td>10</td><td>B
+</td></tr><tr><td>11</td><td>B
+</td></tr></tbody></table>
+
+<p><strong>Mood</strong> - A behavior table chosen as an action.</p>
+
+<p>Behavior tables can be used to form complex behaviors. But how do we judge if these behaviors are valuable to the creature?</p></section></div>
+<div data-src="smarts.md" class="mdImport"><section id="smarts.md">
+<h2>Estimating Behavior Quality</h2>
+
+<p>Just because a creature has a brain, there is no guarantee that it will make good choices. How can we assess if a behavior is beneficial or harmful?</p>
+
+<p>Unlike physical properties such as temperature and light, there is no known measurement that directly correlates to "good" or "bad" behaviors. Benefit is relative to what a particular creature is trying to accomplish. To evaluate a behavior, we must observe if the effects increase or decrease the odds that the creature’s primary goal will succeed.</p>
+
+<p><strong>Goal</strong> - The ultimate purpose of a creature’s actions.</p>
+
+<p>Webster’s 1913 edition has an elegant definition of <strong>Goal</strong>.</p>
+
+<pre><code>Goal 2. The final purpose or aim; the end to which a design tends…
+</code></pre>
+
+<p>Estimating a behavior’s effect on the odds of success of a goal is called <strong>behavior evaluation</strong>. If a behavior increases the chance of success, it is <strong>beneficial</strong>. If not, the behavior is <strong>harmful</strong>.</p>
+
+<p>If a robot’s reason for existence is to vacuum my basement, I can assess its effectiveness by measuring dust on the floor. A vacuum-bot with more beneficial behaviors should leave less dust on the floor than one with less. Most biological organisms’ goal is to reproduce. A living creature’s Darwinian fitness is typically measured by its number of offspring.</p>
+
+<p>If may not be obvious if a behavior is beneficial or not if the creature’s goal requires a long time to accomplish. The assessment of behavior may require weighing effects of multiple short and long term benefits and detriments.</p></section></div>
+<div data-src="intelligence.md" class="mdImport"><section id="intelligence.md">
+<h2>Intelligence</h2>
+
+<p>Now that we have covered some basic terms related to behavior, we are ready for the <em>Behavioral Logic</em> definition of intelligence.</p>
+
+<p><strong>Intelligence</strong> - Choosing actions to accomplish a goal.</p>
+
+<p>There are many definitions of intelligence, but this one is mine. It should describe anything with even the smallest amount of intelligence.</p>
+
+<h3>Learning</h3>
+
+<p>Where does intelligence come from? Some process must exist to create, evaluate, and modify behaviors. We will call this process <strong>learning</strong>.</p>
+
+<p>Three possible ways for a creature to learn are:</p>
+
+<ul>
+<li> <strong>Programmed</strong> by an external process or another intelligent creature.</li>
+<li> <strong>Trained</strong> from evaluating first-hand experiences.</li>
+<li> <strong>Simulational</strong> by imagining experience in a model of the environment.</li>
+</ul>
+
+<p>The next three sections will address each of these learning processes including possible mechanisms, emergent effects, advantages, and disadvantages.</p></section></div>
+</article>
+
+<article id="programmed">
+<h1>Intelligent Machines</h1>
+<div data-src="programmed.md" class="mdImport"><section id="programmed.md">
+<h2>Learning Method I: Externally Programmed</h2>
+
+<p>Some creatures are dependent on outside forces to evaluate and modify their behaviors. Examples of external programmers are natural selection for living organisms, and people for intelligent artifacts.</p>
+
+<p>The execution of programmed behaviors does not require any thought or opinion from the creature. Programmed creatures only follow their given instructions.</p>
+
+<p><strong>Programmer</strong> - A source of learning external to a creature.</p>
+
+<p><strong>Instinct</strong> - A behavior acquired from a programmer.</p>
+
+<p>Programmed behaviors are not so much learned as taught.</p></section></div>
+<div data-src="programmedadvantages.md" class="mdImport"><section id="programmedadvantages.md">
+<h2>Advantages of External Programming</h2>
+
+<p>Learning through external programming is the simplest way for a creature’s brain to acquire beneficial behaviors.</p>
+
+<h3>Optimal</h3>
+
+<p>It is possible for an external programmer to optimize a behavior for maximum benefit.</p>
+
+<h3>Efficient</h3>
+
+<p>Because external programming does not require a brain to have the ability to learn, it can focus exclusively on executing behaviors.</p>
+
+<h3>Fast</h3>
+
+<p>Not only do optimized behaviors free of learning circuitry perform faster than those otherwise encumbered, programmed behavior does not require any first-hand experience. Programmed behaviors are ready to use as soon as they are made. No schooling or practice is required.</p></section></div>
+<div data-src="programmeddisadvantages.md" class="mdImport"><section id="programmeddisadvantages.md">
+<h2>Disadvantages of External Programming</h2>
+
+<h3>Inflexibility</h3>
+
+<p>An externally programmed creature does not have the ability to handle new situations. It has no other option but to wait for its programmer to make changes. This means that behavioral logic that relies entirely on external programming is only appropriate in a single, stable environment.</p>
+
+<p>Most chess programs can easily win against me, but if I change the rules so pawns can teleport to any free space and the winning condition is moving the king across the board, a human could quickly adjust their strategy and easily defeat any chess AI. Stupid computer.</p>
+
+<p>And this is the best case—when the programmer is doing a perfect job. Problems can be caused by a poor programmer, and the creature is powerless to fix them.</p></section></div>
+<div data-src="programmedsummary.md" class="mdImport"><section id="programmedsummary.md">
+<h2>External Programming - Summary</h2>
+
+<p>A creature’s external programming includes all parts of itself that it cannot modify such as:</p>
+
+<ul>
+<li> Physical form</li>
+<li> Sensory apparatus and transmission</li>
+<li> Brain hardware</li>
+<li> Available actions</li>
+</ul>
+
+<p>Because programmed creatures only follow instructions, we will refer to them as <strong>automatons</strong>.</p>
+
+<p><strong>Automaton</strong> - A creature that lacks the ability to learn on its own.</p></section></div>
+</article>
+
+<article id="habit">
+<h1>Habits of the Beasts</h1>
+<div data-src="habit.md" class="mdImport"><section id="habit.md">
+<h2>Learning Method II: Trained</h2>
+
+<p>Creatures that rely on an external programmer will struggle in environments where conditions change unpredictably and frequently. In chaotic environments, creatures need the flexibility to quickly change their behavior in response to current conditions.</p>
+
+<p>A simple behavior <strong>training</strong> mechanism has these components.</p>
+
+<ol>
+<li>Initial <strong>sloppiness</strong> (random variation) in behavior.</li>
+<li>Specialized <strong>subjective senses</strong> that do not dispassionately report data, but indicate an estimate of benefit or harm.</li>
+<li>The ability to <strong>tune</strong> (reduce variation toward optimal parameters) behavior to increase benefit.</li>
+</ol></section></div>
+<div data-src="play.md" class="mdImport"><section id="play.md">
+<h2>Sloppiness</h2>
+
+<p>Unless there is an initial randomness in behavior, there is no opportunity for a creature to explore outside of its original programming.</p>
+
+<p>One way to implement sloppiness is to randomly select <strong>blurry action parameters</strong> from a range of values. For example, if a creature has an action to move an appendage, a blurry parameter could be the speed of movement. It could be initially programmed to have a wide range of random values to unpredictably move slow, medium, or fast.</p>
+<pre id="graph1Diagram">    |
+P() |    ••••••••••••
+    |  ••            ••
+ 0  |••________________••
+    0   0.5  1.0  1.5  2.0
+           Speed
+</pre>
+
+<p>Some behaviors could be sloppier than others. Critical behaviors with predictable benefit should have very little variation. No creature should have to learn to breathe through trial and error.</p></section></div>
+<div data-src="subjectivesenses.md" class="mdImport"><section id="subjectivesenses.md">
+<h2>Subjective Senses</h2>
+
+<p>To judge if the result of an action was beneficial or harmful, sensors shouldn’t transmit an objective measurement, but an opinion. Unlike most visual and audial information, subjective senses judge if something feels good or bad, so we call information received from subjective sensors <strong>feelings</strong>.</p>
+
+<p>In the previous example, stress sensors could cause the creature to feel <strong>pain</strong> to warn of imminent damage if the appendage moves too fast. Chemical receptors could transmit a feeling of <strong>pleasure</strong> if the action resulted in touching a desirable target (food, presumably.)</p></section></div>
+<div data-src="feedback.md" class="mdImport"><section id="feedback.md">
+<h2>Gaining Experience</h2>
+
+<p>One incidence of a situation, the chosen action (and parameter values) and resulting subjective senses is called an <strong>experience</strong>. Positive experiences should increase the probability of the same blurry action parameters being selected in future situations. Painful experiences should decrease the chance of using those parameter values again.</p>
+
+<p>Here are 4 hypothetical experiences of the appendage movement example.</p>
+<table>
+<caption>Experiences</caption>
+<thead><tr><td>Speed</td><td>Stress</td><td>Taste
+</td></tr></thead><tbody>
+<tr><td>1.8</td><td>1</td><td>1
+</td></tr><tr><td>1.1</td><td>0</td><td>1
+</td></tr><tr><td>0.5</td><td>0</td><td>0
+</td></tr><tr><td>1.3</td><td>0</td><td>1
+</td></tr></tbody></table>
+
+<p>If we use these experiences to tune the original probabilities (decreasing the likelihood of stressful movement speeds and increasing those that tasted food) our new distribution of movement speeds should look something like this.</p>
+<pre id="graph2Diagram">   |         •••••
+P() |      •••     •
+    |    ••         •
+ 0  |••••____________••••
+    0   0.5  1.0  1.5  2.0
+            Speed
+</pre>
+
+<p>This situation is no longer reacted to out of instinct. After tuning through experience, it is now a <strong>habit</strong>.</p></section></div>
+<div data-src="childhood.md" class="mdImport"><section id="childhood.md">
+<h2>Childhood</h2>
+
+<p><strong>Childhood</strong> is the period of time at start of a creature's life characterized by extreme randomness of behavior. Children are at a significant disadvantage when competing against either programmed automatons or <strong>adults</strong> with behaviors tuned from experience. One way to protect children during this time is to use <strong>games</strong>—easier and safer versions of their environment. Puppies <strong>play</strong> by wrestling with each other long before needing to fight for their lives. Cats bring injured prey to their kittens for easy hunting practice.</p>
+
+<p>A simpler way to overcome the disadvantages of childhood is to create as many children as possible and hope some of the will survive to adulthood.</p>
+
+<p>As a creature’s experience increases, sloppiness decreases and subjective senses become less important. Adults with sufficient experience should behave more like automatons.</p></section></div>
+<div data-src="virtualsubjectivesense.md" class="mdImport"><section id="virtualsubjectivesense.md">
+<h2>Opinions</h2>
+
+<p>Tuning behavior with experience works, but only for behaviors that result in immediate benefit or harm. Is there a way to give our beasts the wisdom to look ahead to longer term benefit?</p>
+
+<p>One way would be, instead of relying only on subjective senses to evaluate benefit or harm, to remember which feeling was associated with a past situation. That information could be used to create subjective <strong>opinions</strong> of objective situations.</p>
+<table>
+<caption>Opinions</caption>
+<thead><tr><td>Situation</td><td>Associated Subjective Sense
+</td></tr></thead><tbody>
+<tr><td>00</td><td>pain (hunger)
+</td></tr><tr><td>01</td><td>-
+</td></tr><tr><td>10</td><td>-
+</td></tr><tr><td>11</td><td>pleasure (good taste of food)
+</td></tr></tbody></table>
+
+<p>A vertebrate’s optic nerve cannot transmit pain, but if it relays a scene that resembles a previous pleasant experience, a creature could feel the same pleasure. A chess program could examine board state and remember if a similar configuration in the past was associated with a win or loss.</p></section></div>
+<div data-src="habitadvantages.md" class="mdImport"><section id="habitadvantages.md">
+<h2>Habit Advantages</h2>
+
+<p>Creatures that form behaviors through experience can adapt to a changing environment without waiting for an outside programmer.</p>
+
+<p>This also allows trainable creatures to thrive in different environments with the same initial programming. Creatures that can form habits are generalists.</p></section></div>
+<div data-src="habitdisadvantages.md" class="mdImport"><section id="habitdisadvantages.md">
+<h2>Habit Disadvantages</h2>
+
+<p>There are some advantages to learning through experience, but the drawbacks are numerous.</p>
+
+<p>A significant amount of time at the beginning of trainable creatures’ existence is spent choosing haphazard, possibly harmful, actions; wasting time and resources on actions that do not directly further its primary goal. During this time, mistakes with possibly harmful consequences can easily be made.</p>
+
+<p>Habit-forming creatures are not only threatened by physical damage, but risk behavioral damage—harmful behaviors acquired from poor training. Anomalous experiences can create <strong>idiosyncrasies</strong>—behaviors tuned to harmful instead of beneficial effect. Insufficient training can leave highly random, <strong>wild</strong> behavior into adulthood. Bad behaviors can render a creature as incapable of accomplishing its goal as one physically damaged.</p>
+
+<p>Even though learning from experience is considered a "higher" form of intelligence than programmed (it requires more complex behavioral logic than simple behavior tables) it often results in behaviors that are far from maximally beneficial. The more behaviors a creature has, the more likely that some will not be adequately trained before adulthood. It should be no surprise that habit forming creatures frequently display harmful behaviors. It is hoped that the benefit of many good behaviors outweigh the effects of a small number of harmful ones.</p>
+
+<p>The amount of initial random variation of a habit forming creature’s behaviors and actions should be set to an optimal amount. Too little, and a behavior is indistinguishable from programmed. Too much, and the search space is too large to be tuned in time for adulthood.</p>
+
+<p><em>Subjective Senses</em> are only a rough estimator of benefit or harm. Due to inherent inaccuracy in behavior evaluation, tuning to subjective sensory information may not actually be increasing the odds of success of their primary goal.</p>
+
+<p>The problems associated with learning through trial-and-error are numerous and devastating. Why would any creature want to accept the risk, energy and time investment for mediocre behaviors? There is only one explanation: The benefit of habit forming is greater than the harm.</p></section></div>
+<div data-src="habitsummary.md" class="mdImport"><section id="habitsummary.md">
+<h2>Habitual Learning - Summary</h2>
+
+<p>Habitual learners are much more than automatons. They feel pleasure and pain. They remember their experiences. They can form long term strategies by associating objective patterns with failure or success. They deserve a better name.</p>
+
+<p><strong>Beast</strong> - A creature that can form habits.</p>
+
+<p>It’s not flattering, but better than <em>automaton</em>. From Webster’s 1913 edition:</p>
+
+<pre><code>Beast 3. As opposed to man: Any irrational animal.
+</code></pre></section></div>
+</article>
+
+<article id="simulational">
+<h1>The Thinkers</h1>
+<div data-src="simulational.md" class="mdImport"><section id="simulational.md">
+<h2>Learning Method III: Simulational</h2>
+
+<p>The major drawback of programmed behaviors is inflexibility. The time external programmers require to make changes can be too great for creatures living in frequently changing or a variety of environments.</p>
+
+<p>Training overcomes this limitation, but at great cost of time, energy, and risk to acquire sub-optimal behaviors. What habitual learners need is a way to evaluate the benefit of new behaviors quickly and safely. They need the ability to imagine a situation and predict the benefit of an action.</p></section></div>
+<div data-src="simulation.md" class="mdImport"><section id="simulation.md">
+<h2>Beliefs</h2>
+
+<p>A good resource to predict the effects of actions would be a collection of how situations were observed to change after an action was performed. This is <strong>science</strong> in its most primitive form.</p>
+<table>
+<caption>Beliefs</caption>
+<thead><tr><td>Initial Situation</td><td>Action</td><td>Consequent Situation
+</td></tr></thead><tbody>
+<tr><td>00</td><td>move randomly</td><td>01
+</td></tr><tr><td>00</td><td>no action</td><td>00
+</td></tr><tr><td>10</td><td>move randomly</td><td>10
+</td></tr><tr><td>10</td><td>no action</td><td>10
+</td></tr><tr><td>10</td><td>move toward smell</td><td>11
+</td></tr></tbody></table>
+
+<p>Each row of this table is a <strong>belief</strong> that can predict the consequences of an action. A creature's <strong>understanding</strong> of its environment is a measure of how complete, accurate, and efficient its beliefs are.</p>
+
+<p>This is probably a good place to reiterate that my proposed working examples are meant to be the simplest working implementation I can think of. Their purpose is to show that an implementation is possible, and to help illustrate the concept. I assume that real working implementations will be more sophisticated to optimize for effectiveness and speed. These advanced versions should still follow the same basic principles and, more importantly, appear to function the same to anything outside of their black box.</p></section></div>
+<div data-src="recognition.md" class="mdImport"><section id="recognition.md">
+<h2>Simulating Behavior</h2>
+
+<p>A <strong>thought</strong> is the conversion of a situation and a proposed action into predictive subjective sensory data. It starts with an <strong>idea</strong> for a possible action. This proposed action and the current situation can be used to locate the corresponding belief in the beliefs table. From that, we can <strong>predict</strong> a consequent situation.</p>
+<pre id="imagineDiagram">Situation  Idea
+    \       /
+     V     V
+     Beliefs
+        |
+        V
+    Prediction
+        |
+        V
+     Opinions
+        |
+        V
+     Judgment
+</pre>
+
+<p>Once we have a predicted situation, we need to judge if that situation puts the creature in a beneficial or harmful position. Fortunately, it should already have an opinions table that correlates situations with a subjective sensory measurement. It can repurpose this table to judge how good or bad the results of their actions should be.</p></section></div>
+<!--<div data-src="thinking.md" class="mdImport"></div>-->
+<div data-src="deciding.md" class="mdImport"><section id="deciding.md">
+<h2>Making a Decision</h2>
+
+<p> But what if the simulated feelings were painful? What should be done then? We still need a way to use thoughts to choose the most beneficial actions. In the diagram below, I use the term <strong>scenario</strong> to refer to the combination of the current situation and a proposed action.</p>
+<pre id="decideDiagram">Scenario &lt;-- (New) Idea
+   |           |
+   V           |
+Simulation     |
+   |           |
+   V       no  |
+Decision ------'
+   |
+   | yes
+   |
+   V
+  Act
+</pre>
+
+<p>After a simulation, a <strong>decision</strong> must be made to either stop thinking and act, or consider a new idea. One reasonable way to decide is to choose the first action that meets a certain <strong>benefit threshold</strong>.</p>
+
+<p>With a luxury of time, a creature could continue to think about situations even after a beneficial action is found to search for an innovative solution of superior benefit.</p>
+
+<p>If the situation is <strong>urgent</strong>, the most beneficial (or least harmful) idea could be chosen after a short <strong>time threshold</strong>.</p>
+
+<p>In dire emergencies, a <strong>gut reaction</strong> could skip the entire thinking process to quickly act out of habit.</p></section></div>
+<div data-src="brainstorm.md" class="mdImport"><section id="brainstorm.md">
+<h2>Getting Ideas</h2>
+
+<p>All that thinking won’t do any good unless the creature can come up with an idea that is beneficial. How are new ideas produced, and what can be done to choose good ones quickly?</p>
+
+<p>If the creature is already trained by experience, it has a habit ready to use as the first idea. So that’s one idea, but what if that action simulates painful feelings? Variations in proposed actions can be made in the same way as the sloppiness of trained behaviors.</p>
+
+<p>If minor variations all evaluate poorly, it may have to search for ideas that are significantly different than its current habits and instincts. Random actions and large variation of action variables are possible ways to <strong>guess</strong>. Imagining what would happen if nothing was done isn’t a bad idea either.</p>
+
+<p>If a creature has sufficient understanding of its environment, it could also get ideas by <strong>imitating</strong> others’ behavior.</p></section></div>
+<!--<div data-src="science.md" class="mdImport"></div>-->
+<div data-src="planning.md" class="mdImport"><section id="planning.md">
+<h2>Planning Through Successive Simulations</h2>
+
+<p>A simulation does not have to end once an action is chosen. Instead of acting on the decision, a creature could instead start a new simulation using the prediction of a previously decided action, and then think about the best action in the ensuing scenario. It could then create a new scenario from the results of that decision, and so on.</p>
+
+<p><strong>Plan</strong> - A sequence of actions (<strong>steps</strong>) produced from a chain of simulations.</p>
+
+<p>For important decisions and the luxury of time to think, successive simulation can be used to generate plans. These plans can then be <strong>executed</strong> by performing the series of actions in immediate succession without the need to stop and think after each action. (As long as the intermediate result of each action matches the predicted outcomes of each step of the plan.)</p></section></div>
+<div data-src="simulationadvantages.md" class="mdImport"><section id="simulationadvantages.md">
+<h2>Simulation Advantages</h2>
+
+<p>Conscious creatures can evaluate the benefit of behaviors faster and with less risk than beasts. They are better at handing novel situations and can explore a wider variation of behavior without risk of harm.</p></section></div>
+<div data-src="simulationdisadvantages.md" class="mdImport"><section id="simulationdisadvantages.md">
+<h2>Simulation Disadvantages</h2>
+
+<p>Learning from simulations adds significant complexity to behavioral logic systems, increasing both the time and energy required for the execution of behaviors.</p>
+
+<p>Because of increased complexity, more can go wrong. Here are a few possible problems.</p>
+
+<p>A misfortunate creature could have inaccurate beliefs. This produces decisions that are imagined to be beneficial, but are disastrous in practice. As Yogi Berra said, "In theory there is no difference between theory and practice. In practice there is."</p>
+
+<p>There is no known way to generate ideas that guarantee at least one is beneficial in finite time and certainly not in the brief time behaviors require for the creature to accomplish something during its life span. Producing ideas can be pure guesswork.</p>
+
+<p>When to make a decision may be the step of the thinking process most fraught with peril. <strong>Indecision</strong> can lock thinking into a never ending loop. <strong>Premature conclusion</strong>s choose the first barely acceptable action, even if one significantly better could be discovered with a little more thought.</p>
+
+<p>No wonder people have so many psychological issues.</p></section></div>
+<div data-src="simulationsummary.md" class="mdImport"><section id="simulationsummary.md">
+<h2>Simulation Summary</h2>
+
+<p>I gave names to programmed and trained creatures (automatons and beasts) but not conscious ones. This is because I am not certain if only beasts can be conscious, or if it is possible to have conscious automatons. I feel strongly that consciousness as described requires underlying training logic both for idea generation (from previous experiences) and evaluation based on subjective senses. I don’t feel strongly enough to declare it for certain. I will leave the possibility of conscious automatons as an important outstanding question.</p></section></div>
+</article>
+
+<article>
+<!--<h1>Implications and the Way Forward</h1>
+<div data-src="conclusionintro.md" class="mdImport"></div>
+<div data-src="singularity.md" class="mdImport"></div>
+<div data-src="friendlyai.md" class="mdImport"></div>
+<div data-src="memory.md" class="mdImport"></div>
+<div data-src="measuringintelligence.md" class="mdImport"></div>
+<div data-src="therapy.md" class="mdImport"></div>-->
+<div data-src="conclusion.md" class="mdImport"><section id="conclusion.md">
+<h2>Now what?</h2>
+
+<p>I have finished describing <em>Behavioral Logic</em>, a theoretical model of intelligence and the result of several years of personal research. If I was not persuasive, that’s OK. I am sure I could have written more clearly and there are probably important ideas I have missed. I have no desire to use rhetorical tricks to deceive anyone into accepting my beliefs if they are unworthy. If I have persuaded you, thank you for reading with an open mind. Either way, the path forward is the same: try to prove me wrong. If what I have described is valuable, then robots built using the concept of <em>behavioral logic</em> should perform better than those that aren’t, and intelligent biological organisms should have analogous processes in the structure and function of their neuroanatomy. I am excited to start looking, and hope you join me.</p>
+
+<p>I have mentioned building artificially intelligent robots (and intend this document to be a high-level specification for such) but I do not believe that the greatest possible benefit to a thorough and accurate understanding of intelligence is a robot butler (as cool as that is.) The greatest promise is a deeper understanding of ourselves. Powerful, simple and accurate models of behavior would be a breakthrough for the study and treatment of mental illness and for coaxing the most out of our greatest asset: the most powerful brains on the planet.</p>
+
+<p>If we want to do good for ourselves, our families, our friends, our communities, and our world, we must take advantage of our intelligence. We should do all we can to make the smartest decisions, and our leaders should nurture an environment that brings out the best of our natural abilities. If we have any hope of making our world the place that we dream it could be, we need to think.</p></section></div>
+</article>
+
+<script src="diagrams.js"></script>
