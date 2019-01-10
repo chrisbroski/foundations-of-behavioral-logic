@@ -47,7 +47,7 @@ Disqualifying reason: Ambiguous
 
 ### Cognition
 
-Disqualifying reason: Ambiguous, Jargon, Unobservable
+Disqualifying reason: Ambiguous, Jargon, Unobservability
 
 ### Proof
 
@@ -55,6 +55,10 @@ Disqualifying reason: Ambiguous
 
 ### The Soul
 
-Disqualifying reason: Unobservable
+Disqualifying reason: Unobservability
 
 I'm not saying I don't believe in *soul*. The passion of James Brown and African-American cuisine are undeniable. I mean *the soul*.
+
+### Epistemology
+
+Disqualifying reason: Jargon. Plus it is philosophy, not science. (I.e. bad ideas are never rigorously disproven so the debate is never ending.)
