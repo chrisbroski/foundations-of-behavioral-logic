@@ -1,7 +1,7 @@
 Anti-Glossary of Intelligence
 =============================
 
-I've spend a lot of effort selecting terms to build a comprehensive description of intelligence. Some commonly used terms are conspicuously absent. But is their absence really as conspicuous it should be? Probably not. So I decided to make a point of listing terms that I believe are unhelpful in the discussions and descriptions of intelligence concepts.
+Behavioral Logic is all about selecting the exact terms needed to describe intelligence concisely and clearly. But some commonly used terms are conspicuously absent. Is their absence really as conspicuous it should be? Probably not. So I decided to make a point of listing terms that I believe are unhelpful in the discussions and descriptions of intelligence concepts.
 
 ## Disqualifying Reasons
 
@@ -21,13 +21,13 @@ To avoid ambiguous and misleading terms, we could simply create a new word. Ever
 
 ### Unobservable
 
-Terms must be defined in a way
-
-Sometimes words are used that describe concepts that have already been definitively disproven or are inherently illogical or unobservable. Recycling bad ideas is not valuable. Only use words that have rigorous, observable definitions, unless your goal is to deliberately confuse and mislead.
+Sometimes words are used that describe concepts that have already been definitively disproven or are inherently illogical or unobservable. Recycling bad ideas is not valuable. We will not be talking about ghosts, magic spells, chi, or other overtly mystical concepts. Only use words that have rigorous, observable definitions, unless your goal is to deliberately confuse and mislead.
 
 ## The Forbidden Words
 
-*Forbidden* might be too strong of a term. If a term is only ambiguous or misleading, I see no problem continuing to use it in casual conversation.
+*Forbidden* might be too strong of a term. If a term is only ambiguous or misleading, I see no problem continuing to use it in casual conversation. But when we are talking about very complex and contentious topics (such as the nature of intelligence) we have little of of constructive communication if we cannot agree to key terms that are as clear and consistent as possible.
+
+These are terms that I actively avoid.
 
 ### Love
 
@@ -43,7 +43,9 @@ Disqualifying reason: Misleading
 
 ### Conditioning / Classical Conditioning
 
-Disqualifying reason: Ambiguous
+Disqualifying reason: Ambiguous, unnecessary
+
+Classical conditioning is a real thing, but I prefer to call it *opinion*.
 
 ### Cognition
 
@@ -62,3 +64,7 @@ I'm not saying I don't believe in *soul*. The passion of James Brown and African
 ### Epistemology
 
 Disqualifying reason: Jargon. Plus it is philosophy, not science. (I.e. bad ideas are never rigorously disproven so the debate is never ending.)
+
+### Inductive and Deductive Reasoning
+
+More misleading philosophical jargon. Also, there seems to be no way to define these concepts in a rigorous manner enough that they could be implemented as some sort of algorithm (in other words "It's magic!") I honestly am not going to argue this much because it seems like so much hogwash and I'd rather focus on ideas that seems valuable. But please, if you are into the Bacons I'd love to hear about how these concepts add value to the discussion.
